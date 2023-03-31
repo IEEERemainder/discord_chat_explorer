@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>DVG Strings Toolkit</title>
+	</head>
+	<body>
+		<select id="select" multiple size="40" style="max-width:85%;">
+		</select>
+		<div style="float:right; max-width:14%; height:100%; position: relative">
+			<button id="debugAppend100Btn" title="For debug purposes">+100 chars to 1L</button>
+			<br>
+			<button id="debugNew100Btn" title="For debug purposes">+100 lines</button>
+			<br>
+			<button id="sizePlusBtn" title="Adjust main area heigth in lines">+size</button>
+			<br>
+			<button id="sizeMinusBtn" title="Adjust main area heigth in lines">-size</button>
+			<br>
+			<button id="clearHistoryBtn" title="If you don't need to Ctrl + Z anymore">clear history</button>
+			<br>
+			<input id="searchInput" title="https://learn.javascript.ru/regular-expressions for details" placeholder="regex">
+			<br>
+			<input id="flagsInput" title="https://learn.javascript.ru/regular-expressions for details" placeholder="flags">
+			<br>
+			<input id="replacementInput" title="https://learn.javascript.ru/regular-expressions for details" placeholder="replacement">
+			<br>
+			<button id="searchBtn" title="Selects lines that match criteria in 'regex' and 'flags'">search</button>
+			<button id="replaceBtn" title="Edits lines that match criteria in 'regex' and 'flags' with 'replacement' pattern, also selects them">replace</button>
+			<br>
+			<button id="invertSelectionBtn" title="Swaps selected and non-selected">invert</button>
+			<br>
+			<button id="hideBtn" title="Hides selected lines">hide</button>
+			<button id="unhideAllBtn" title="Undo any previously hidden lines">unhide all</button>
+			<br>
+			<input id="dataScriptInput" title=".data.js file name (without extension part), should be in the same folder as this .html" placeholder="data file">
+			<br>
+			<button id="loadBtn" title="Clears current lines and load from .data.js specified in 'date file'">load</button>
+			<button id="saveBtn" title="Saves selected lines into .data.js specified in 'data file'">save</button>
+			<br>
+			<br>
+			Hotkeys:
+			<br>
+			<b>Delete</b> changes selected lines text to '[deleted]'
+			<br>
+			<b>Ctrl</b> + <b>C</b> copies text of selected lines via prompt (truncated to ~3000 symbols, better use 'save' button)
+			<br>
+			<b>Ctrl</b> + <b>Z</b> undos last edit (don't worc with 'hide' button)
+			<br>
+			<b>Ctrl</b> + <b>E</b> edits text of the first selected line
+		</div>
+		<div style="position: absolute;bottom: 0;right: 0;margin: 10px;">v1.0.4</div>
+		<span id="ruler"></span>
+		<style>
+			.h {display: none;}
+			#ruler { visibility: hidden; white-space: nowrap; }
+		</style>
+		<script src="main.js"></script>
+	</body>
+</html>
+<!-- DVG - Interlocked#6505 -->
+<!-- Allow existent_cris#4572 to easily edit sensitive messages from their dialogues dumps. P4091/5 19/03/2023 -->
